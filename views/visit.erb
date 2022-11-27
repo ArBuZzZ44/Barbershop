@@ -1,5 +1,13 @@
 <h2>Записаться</h2>
 <p>На этой странице вы можете записаться к нам в Barber Shop</p>
+
+<script type="text/javascript"> //правильный вариант записи jquery на странице через function. если пишем без jquery, то просто чистый js код
+  $(function(){                 //исполняется после загрузки страницы, чтобы сначала загрузился jq, а потом js к нему обратился
+    $('select[name="colorpicker"]').simplecolorpicker();
+    $('#datetimepicker').datetimepicker();
+  });
+</script>
+
 <form action="/Visit" method="POST" role="form">
   <div class="form-group">
     <label>Ваше имя</label>
@@ -11,7 +19,7 @@
   </div>
   <div class="form-group">
     <label>Когда вас ждать?</label>
-    <input type="text" name="date" class="form-control"  placeholder="Введите дату и время" value="<%= @date %>">
+    <input id="datetimepicker" type="text" name="date" class="form-control"  placeholder="Введите дату и время" value="<%= @date %>">
   </div>
   <div class="form-group">
     <select class="form-select" name="barber">
@@ -41,11 +49,7 @@
   	<button type="submit" class="btn btn-primary">Записаться</button>
 </form>
 
-<script type="text/javascript"> //правильный вариант записи jquery на странице через function. если пишем без jquery, то просто чистый js код
-  $(function(){                 //исполняется после загрузки страницы, чтобы сначала загрузился jq, а потом js к нему обратился
-    $('select[name="colorpicker"]').simplecolorpicker();
-  });
-</script>
+
 
 
 
