@@ -25,7 +25,7 @@ post '/Visit' do
 	@username = params[:username]
 	@phone = params[:phone]
 	@date = params[:date]
-	@baber = params[:baber]
+	@barber = params[:barber]
 	@color = params[:colorpicker]
 
 	hh = {username: 'Введите имя',
@@ -42,11 +42,11 @@ post '/Visit' do
 	# if @error != '' erb :visit
 
 	@title = 'Спасибо!'
-	@message = "Уважаемый #{@username}, мы будем ждать вас в #{@date}, мастер: #{@baber}, цвет: #{@color}"
+	@message = "Уважаемый #{@username}, мы будем ждать вас в #{@date}, мастер: #{@barber}, цвет: #{@color}"
 
 
 	f = File.open './public/users.txt', 'a'
-	f.write "Имя: #{@username}, номер телефона: #{@phone}, дата и время: #{@date}, мастер: #{@baber}, цвет: #{@color} \n"
+	f.write "Имя: #{@username}, номер телефона: #{@phone}, дата и время: #{@date}, мастер: #{@barber}, цвет: #{@color} \n"
 	f.close
 
 	 erb :message

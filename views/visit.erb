@@ -14,11 +14,11 @@
     <input type="text" name="date" class="form-control"  placeholder="Введите дату и время" value="<%= @date %>">
   </div>
   <div class="form-group">
-    <select class="form-select" name="baber">
+    <select class="form-select" name="barber">
       <option selected>Выбор парикмахера</option>
-      <option value="Walter White">Walter White</option>
-      <option value="Jessie Pinkman">Jessie Pinkman</option>
-      <option value="Gus Fring">Gus Fring</option>
+      <option value="Walter White" <%= @barber == 'Walter White' ? 'selected' : '' %>>Walter White</option>
+      <option value="Jessie Pinkman" <%= @barber == 'Jessie Pinkman' ? 'selected' : '' %>>Jessie Pinkman</option>
+      <option value="Gus Fring" <%= @barber == 'Gus Fring' ? 'selected' : '' %>>Gus Fring</option>
     </select>
   </div>
   <div class="form-group">
