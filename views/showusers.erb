@@ -8,7 +8,7 @@
 			<th>Цвет</th>
 		</tr>
 	</thead>
-	<body>
+	<tbody>
 		<% @results.each do |row| %>
 			<tr>
 				<td><%= row['username'] %></td>
@@ -18,5 +18,5 @@
 				<td><%= row['color'] %></td>
 			</tr>
 		<% end %>
-	</body>
+	</tbody>
 </table>
