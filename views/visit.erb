@@ -24,9 +24,9 @@
   <div class="form-group">
     <select class="form-select" name="barber">
       <option selected>Выбор парикмахера</option>
-      <option value="Walter White" <%= @barber == 'Walter White' ? 'selected' : '' %>>Walter White</option>
-      <option value="Jessie Pinkman" <%= @barber == 'Jessie Pinkman' ? 'selected' : '' %>>Jessie Pinkman</option>
-      <option value="Gus Fring" <%= @barber == 'Gus Fring' ? 'selected' : '' %>>Gus Fring</option>
+      <% @barbers.each do |item| %>
+        <option <%= @barber == item['name'] ? 'selected' : '' %>><%= item['name'] %></option>
+      <% end %>
     </select>
   </div>
   <div class="form-group">

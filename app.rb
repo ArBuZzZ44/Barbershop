@@ -22,6 +22,10 @@ def seed_db db, barbers
 	end
 end
 
+before do
+	db = get_db #исполняется перед вызовом любой страницы
+	@barbers = db.execute 'select * from Barbers'
+end
 
 configure do
    db = get_db
