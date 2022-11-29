@@ -136,7 +136,7 @@ post '/Contacts' do
 	erb :message
 end
 
-get '/showusers' do 
+get '/Showusers' do 
 	db = get_db
 
 	@results = db.execute 'select * from Users order by id desc'
